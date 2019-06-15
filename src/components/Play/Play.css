@@ -1,4 +1,27 @@
 .Play {
   background-color: rgb(212, 212, 212);
   flex-grow: 3;
+  overflow: hidden;
+}
+
+#ladybug {
+  animation: moveAround 10s linear infinite;
+}
+
+#ladybug:hover{
+  cursor: pointer;
+}
+
+@keyframes moveAround {
+  0%{
+    transform: translateY(800px)
+  }
+  100%{
+      transform: translateY(-100px)
+  }
+}
+
+img {
+  width: 20px;
+  height: auto;
 }

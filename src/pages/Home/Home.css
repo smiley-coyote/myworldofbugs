@@ -7,3 +7,9 @@
   flex-direction: row;
   justify-content: space-around;
 }
+
+@media only screen and (max-width: 930px){
+  .Game{
+    width: 100%;
+  }
+}

@@ -5,7 +5,7 @@ import "./Play.css";
 
 const Play = props => (
  <div className="Play">
-   Play Area
+   <img onClick={props.onClick} id="ladybug" alt="ladybug" src="ladybug.png" />
  </div>
 );
 
