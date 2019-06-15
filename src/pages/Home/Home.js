@@ -1,15 +1,20 @@
 import React from "react";
 import "./Home.css";
 import Nav from '../../components/Nav';
-import Game from '../../components/Game';
+import Play from '../../components/Play';
+import Stats from '../../components/Stats'
 
 // Component for the Navbar
 
 const Home = props => (
   <div className="Home">
     <Nav />
-    <Game />
+    <div className="Game">
+    <Play />
+    <Stats />
     </div>
+    
+  </div>
 );
 
 export default Home;
