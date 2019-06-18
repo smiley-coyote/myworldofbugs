@@ -36,31 +36,36 @@ class Home extends React.Component {
 
 
   render(){
+    // list of caught bugs
     const bugsList = this.state.bugsCaught.map((item, key)=>
       <li key={item.id}>
         {item.name}
       </li>
     );
+    // all remaining bugs left in play area
+    const bugsLeft = this.state.bugsAll.map(function(item,index){
+    if(!item.caught){
+      return <Bug 
+      onClick={this.catchBug}
+      key={index}
+      name={item.name}
+      id={item.id}
+      alt={item.alt}
+      src={item.src}
+      caught={item.caught}
+      index={index}
+      />
+    }
+  }.bind(this))
+
     return(
       <div className="Home">
       <Nav />
       <div className="Game">
-      <Play>{this.state.bugsAll.map((item,index)=>(
-        !item.caught ? (
-        <Bug 
-        onClick={this.catchBug}
-        key={index}
-        name={item.name}
-        id={item.id}
-        alt={item.alt}
-        src={item.src}
-        caught={item.caught}
-        index={index}
-        />
-        ) : (
-          console.log(item.caught)
-        )
-      ))}
+      <Play>
+
+       {bugsLeft}
+    
       </Play>
       <Stats>
         <ul>
