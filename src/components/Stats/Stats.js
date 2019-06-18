@@ -5,7 +5,8 @@ import "./Stats.css";
 
 const Stats = props => (
  <div className="Stats">
-   Stats column
+   <h3>Current Bugs:</h3>
+   {props.children}
  </div>
 );
 

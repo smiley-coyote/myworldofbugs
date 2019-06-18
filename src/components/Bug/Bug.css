@@ -1,0 +1,47 @@
+#ladybug {
+  animation: moveAround 15s linear infinite;
+}
+
+#femaleant{
+  animation: moveAround2 10s linear infinite;
+}
+
+#butterfly{
+  animation: moveAround3 12s linear infinite;
+}
+
+@keyframes moveAround {
+  0%{
+    transform: translateY(800px)
+  }
+  100%{
+      transform: translateY(-100px)
+  }
+}
+
+@keyframes moveAround2 {
+  0%{
+    transform: translate(200px, 800px)
+  }
+  100%{
+      transform: translate(200px, -100px)
+  }
+}
+
+@keyframes moveAround3 {
+  0%{
+    transform: translate(-200px, 800px)
+  }
+  100%{
+      transform: translate(-200px, -100px)
+  }
+}
+
+img {
+  width: 20px;
+  height: auto;
+}
+
+img:hover{
+  cursor: pointer;
+}

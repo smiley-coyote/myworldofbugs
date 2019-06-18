@@ -2,3 +2,7 @@
   border: 1px solid black;
   flex-grow: 1;
 }
+
+.Stats li{
+  list-style: none;
+}
