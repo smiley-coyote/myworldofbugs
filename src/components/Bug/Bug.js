@@ -10,6 +10,7 @@ const Bug = props => (
  id={props.id}
  name={props.name}
  alt={props.alt}
+ index={props.index}
  />
 );
 

@@ -22,17 +22,19 @@ class Home extends React.Component {
   // Catching the bug
   catchBug(event){
     const currentBugs = this.state.bugsCaught;
+    allBugs[event.target.getAttribute('index')].caught = true
     currentBugs.push({
       name: event.target.getAttribute('name'),
       src: event.target.src,
-      id: event.target.id
+      id: event.target.id,
+      caught: true
     })
     this.setState({
-      bugsCaugt: currentBugs
+      bugsCaught: currentBugs 
     })
   }
 
-  
+
   render(){
     const bugsList = this.state.bugsCaught.map((item, key)=>
       <li key={item.id}>
@@ -43,15 +45,21 @@ class Home extends React.Component {
       <div className="Home">
       <Nav />
       <div className="Game">
-      <Play>{this.state.bugsAll.map((item,key)=>(
+      <Play>{this.state.bugsAll.map((item,index)=>(
+        !item.caught ? (
         <Bug 
         onClick={this.catchBug}
-        key={key}
+        key={index}
         name={item.name}
         id={item.id}
         alt={item.alt}
         src={item.src}
+        caught={item.caught}
+        index={index}
         />
+        ) : (
+          console.log(item.caught)
+        )
       ))}
       </Play>
       <Stats>

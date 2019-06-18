@@ -3,19 +3,22 @@ const allBugs = [
   name: 'ladybug',
   id: 'ladybug',
   alt: 'ladybug',
-  src: 'ladybug.png'
+  src: 'ladybug.png',
+  caught: false
 },
 {
   name: 'female ant',
   id: 'femaleant',
   alt: 'female ant',
-  src: 'femaleant.png'
+  src: 'femaleant.png',
+  caught: false
 },
 {
   name: 'butterfly',
   id: 'butterfly',
   alt: 'butterfly',
-  src: 'butterfly.png'
+  src: 'butterfly.png',
+  caught: false
 }
 ]
 
