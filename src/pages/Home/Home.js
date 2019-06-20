@@ -4,7 +4,8 @@ import Nav from '../../components/Nav';
 import Play from '../../components/Play';
 import Stats from '../../components/Stats';
 import Bug from '../../components/Bug';
-import allBugs from '../../bugsfile'
+import AllBugs from '../../bugsfile'
+import BugClass from '../../bugsclasses';
 
 // Component for the Navbar
 
@@ -14,27 +15,32 @@ class Home extends React.Component {
     super(props);
     this.state = {
       bugsCaught: [],
-      bugsAll: allBugs,
+      bugsAll: AllBugs,
       catchNext: {},
-      counter: 3
+      counter: 3,
+      // bugClasses: BugClass
     }
     this.catchBug = this.catchBug.bind(this);
     this.getRandomBug = this.getRandomBug.bind(this);
+    this.bugRandomClass = this.bugRandomClass.bind(this);
   }
   componentDidMount(){
     this.getRandomBug();
+    this.bugRandomClass();
   }
   // Catching the bug
+
   catchBug(event){
     const currentBugs = this.state.bugsCaught;
     let catchNextId = this.state.catchNext.id;
     let caughtBugId = event.target.id;
     if(catchNextId === caughtBugId){
-      allBugs[event.target.getAttribute('index')].caught = true
+      AllBugs[event.target.getAttribute('index')].caught = true
       currentBugs.push({
         name: event.target.getAttribute('name'),
         src: event.target.src,
         id: event.target.id,
+        className: event.target.className,
         caught: true
       })
       this.setState({
@@ -55,10 +61,24 @@ class Home extends React.Component {
     }
   
   }
+  // Randomizes bugs class for animations
+  bugRandomClass(){
+    let bugsArr = AllBugs;
+    let classesArr = BugClass;
+    let bugsArrNew = [];
+
+    for(let i = 0; i<bugsArr.length; i++){
+      bugsArr[i].className = classesArr[i]
+      bugsArrNew.push(bugsArr[i])
+    }
+    this.setState({
+      allBugs: bugsArrNew
+    })
+  }
 
   // Randomizes bugs to catch
   getRandomBug() {
-    let availableBugs = allBugs.filter(bug => !bug.caught)
+    let availableBugs = AllBugs.filter(bug => !bug.caught)
     if(availableBugs.length > 0){
       let bugIndex = Math.floor(Math.random() * availableBugs.length);
       let nextBug = availableBugs[bugIndex]
@@ -90,6 +110,7 @@ class Home extends React.Component {
       src={item.src}
       caught={item.caught}
       index={index}
+      className={item.className}
       />
     }
   }.bind(this))

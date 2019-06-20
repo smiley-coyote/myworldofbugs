@@ -10,6 +10,18 @@
   animation: moveAround3 12s linear infinite;
 } */
 
+.bug1 {
+  animation: moveAround 15s linear infinite;
+}
+
+.bug2 {
+  animation: moveAround2 10s linear infinite;
+}
+
+.bug3 {
+  animation: moveAround3 12s linear infinite;
+}
+
 @keyframes moveAround {
   0%{
     transform: translateY(800px)

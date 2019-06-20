@@ -1,9 +1,10 @@
-const allBugs = [
+const AllBugs = [
   {
   name: 'ladybug',
   id: 'ladybug',
   alt: 'ladybug',
   src: 'ladybug.png',
+  className: '',
   caught: false
 },
 {
@@ -11,6 +12,7 @@ const allBugs = [
   id: 'femaleant',
   alt: 'female ant',
   src: 'femaleant.png',
+  className: '',
   caught: false
 },
 {
@@ -18,8 +20,9 @@ const allBugs = [
   id: 'butterfly',
   alt: 'butterfly',
   src: 'butterfly.png',
+  className: '',
   caught: false
 }
 ]
 
-export default allBugs;
+export default AllBugs;
