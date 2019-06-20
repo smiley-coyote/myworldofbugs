@@ -1,6 +1,5 @@
 import React from "react";
 import "./Home.css";
-import Nav from '../../components/Nav';
 import Play from '../../components/Play';
 import Stats from '../../components/Stats';
 import Bug from '../../components/Bug';
@@ -139,8 +138,6 @@ class Home extends React.Component {
   }.bind(this))
 
     return(
-      <div className="Home">
-      <Nav />
       <div className="Game">
       <Play>
 
@@ -159,7 +156,6 @@ class Home extends React.Component {
       </Stats>
       </div>
       
-    </div>
     );
   }
 
