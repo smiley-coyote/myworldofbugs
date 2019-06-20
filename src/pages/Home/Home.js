@@ -13,6 +13,7 @@ import BugClass from '../../bugsclasses';
 class Home extends React.Component {
   constructor(props) {
     super(props);
+    
     this.state = {
       bugsCaught: [],
       bugsAll: AllBugs,
@@ -23,10 +24,13 @@ class Home extends React.Component {
     this.catchBug = this.catchBug.bind(this);
     this.getRandomBug = this.getRandomBug.bind(this);
     this.bugRandomClass = this.bugRandomClass.bind(this);
+    this.shuffleClasses = this.shuffleClasses.bind(this);
+    
   }
+  
   componentDidMount(){
     this.getRandomBug();
-    this.bugRandomClass();
+    this.shuffleClasses(BugClass);
   }
   // Catching the bug
 
@@ -62,9 +66,9 @@ class Home extends React.Component {
   
   }
   // Randomizes bugs class for animations
-  bugRandomClass(){
+  bugRandomClass(randomBugClasses){
     let bugsArr = AllBugs;
-    let classesArr = BugClass;
+    let classesArr = randomBugClasses;
     let bugsArrNew = [];
 
     for(let i = 0; i<bugsArr.length; i++){
@@ -74,6 +78,25 @@ class Home extends React.Component {
     this.setState({
       allBugs: bugsArrNew
     })
+  }
+
+  shuffleClasses(array) {
+    let currentIndex = array.length, temporaryValue, randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+  
+    this.bugRandomClass(array);
   }
 
   // Randomizes bugs to catch
