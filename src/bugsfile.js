@@ -22,6 +22,22 @@ const AllBugs = [
   src: 'butterfly.png',
   className: '',
   caught: false
+},
+{
+  name: 'honey bee',
+  id: 'honeybee',
+  alt: 'honey bee',
+  src: 'bee.png',
+  className: '',
+  caught: false
+},
+{
+  name: 'green fly',
+  id: 'greenfly',
+  alt: 'green fly',
+  src: 'greenfly.png',
+  className: '',
+  caught: false
 }
 ]
 

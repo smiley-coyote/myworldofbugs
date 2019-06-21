@@ -5,7 +5,7 @@ import "./Results.css";
 
 const Results = props => (
  <div className="Results">
-   <h3>Results Page</h3>
+   {props.children}
  </div>
 );
 

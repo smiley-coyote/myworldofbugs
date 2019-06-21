@@ -3,7 +3,8 @@ import "./Home.css";
 import Play from '../../components/Play';
 import Stats from '../../components/Stats';
 import Bug from '../../components/Bug';
-import AllBugs from '../../bugsfile'
+import Results from '../../components/Results';
+import AllBugs from '../../bugsfile';
 import BugClass from '../../bugsclasses';
 
 // Component for the Navbar
@@ -18,6 +19,7 @@ class Home extends React.Component {
       bugsAll: AllBugs,
       catchNext: {},
       counter: 3,
+      bugsCounter: 5
       // bugClasses: BugClass
     }
     this.catchBug = this.catchBug.bind(this);
@@ -74,13 +76,14 @@ class Home extends React.Component {
       bugsArr[i].className = classesArr[i]
       bugsArrNew.push(bugsArr[i])
     }
+    console.log(bugsArrNew)
     this.setState({
       allBugs: bugsArrNew
     })
   }
 
-  shuffleClasses(array) {
-    let currentIndex = array.length, temporaryValue, randomIndex;
+  shuffleClasses(bugsArr) {
+    let currentIndex = bugsArr.length, temporaryValue, randomIndex;
   
     // While there remain elements to shuffle...
     while (0 !== currentIndex) {
@@ -90,26 +93,35 @@ class Home extends React.Component {
       currentIndex -= 1;
   
       // And swap it with the current element.
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
+      temporaryValue = bugsArr[currentIndex];
+      bugsArr[currentIndex] = bugsArr[randomIndex];
+      bugsArr[randomIndex] = temporaryValue;
     }
   
-    this.bugRandomClass(array);
+    this.bugRandomClass(bugsArr);
   }
 
   // Randomizes bugs to catch
   getRandomBug() {
-    let availableBugs = AllBugs.filter(bug => !bug.caught)
-    if(availableBugs.length > 0){
+    let availableBugs = AllBugs.filter(bug => !bug.caught);
+    let bugCounter = this.state.bugsCounter;
+    if(bugCounter > 0){
       let bugIndex = Math.floor(Math.random() * availableBugs.length);
-      let nextBug = availableBugs[bugIndex]
-      this.setState({
-        catchNext: nextBug
-      })
-    } else{
-      alert('you win!')
-    }
+      let nextBug = availableBugs[bugIndex];
+      bugCounter--;
+      if(bugCounter === 0){
+        setTimeout(function(){ alert("you win!"); }, 1000);
+        this.setState({
+          catchNext: {src: 'checkmark.png', alt: 'checkmark'},
+          bugsAll: []
+        })
+      }else{
+        this.setState({
+          catchNext: nextBug,
+          bugsCounter: bugCounter
+        })
+      }
+    } 
   
   }
 
@@ -117,7 +129,7 @@ class Home extends React.Component {
     // list of caught bugs
     const bugsList = this.state.bugsCaught.map((item, key)=>
       <li key={item.id}>
-        {item.name}
+        <img src={item.src} alt={item.alt} />
       </li>
     );
     // all remaining bugs left in play area
@@ -138,22 +150,21 @@ class Home extends React.Component {
   }.bind(this))
 
     return(
-      <div className="Game">
+      <div className="gameWindow">
+      <Results>
+        <h2>Results Page</h2>
+      </Results>
+      <div className="game">
       <Play>
-
        {bugsLeft}
-    
       </Play>
-      <Stats>
-        <h3>Tries left:</h3>
-        <p>{this.state.counter}</p>
-        <h3>Catch me!</h3>
-        <p>{this.state.catchNext.name}</p>
-      <h3>Current Bugs:</h3>
-        <ul>
-        {bugsList}
-        </ul>
-      </Stats>
+
+      <Stats 
+      counter = {this.state.counter}
+      catchNext = {this.state.catchNext}
+      bugsList = {bugsList}
+      />
+      </div>
       </div>
       
     );

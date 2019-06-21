@@ -10,6 +10,14 @@
   animation: moveAround3 12s linear infinite;
 }
 
+.bug4 {
+  animation: moveAround4 8s linear infinite;
+}
+
+.bug5 {
+  animation: moveAround5 14s linear infinite;
+}
+
 @keyframes moveAround {
   0%{
     transform: translateY(100vh)
@@ -34,6 +42,24 @@
   }
   100%{
       transform: translate(65vh, 0vh)
+  }
+}
+
+@keyframes moveAround4 {
+  0%{
+    transform: translate(75vh, 100vh)
+  }
+  100%{
+      transform: translate(75vh, 0vh)
+  }
+}
+
+@keyframes moveAround5 {
+  0%{
+    transform: translate(45vh, 100vh)
+  }
+  100%{
+      transform: translate(45vh, 0vh)
   }
 }
 

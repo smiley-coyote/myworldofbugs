@@ -1,15 +1,19 @@
-.Game {
+.gameWindow {
   width: 75%;
-  min-height: 500px;
+ 
   border: 1px solid black;
   margin: 0 auto;
+}
+
+.game{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  min-height: 500px;
 }
 
 @media only screen and (max-width: 930px){
-  .Game{
+  .gameWindow{
     width: 100%;
   }
 }
