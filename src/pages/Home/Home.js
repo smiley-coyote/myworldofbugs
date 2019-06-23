@@ -150,7 +150,7 @@ class Home extends React.Component {
   }.bind(this))
 
     return(
-      <div className="gameWindow">
+      <div>
       <Results>
         <h2>Results Page</h2>
       </Results>

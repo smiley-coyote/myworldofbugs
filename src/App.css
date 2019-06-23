@@ -9,3 +9,10 @@
   color: #61dafb;
 }
 
+.mainDiv{
+  width: 75%;
+
+  margin: 0 auto;
+  min-height: 500px;
+}
+

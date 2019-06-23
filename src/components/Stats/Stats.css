@@ -1,9 +1,14 @@
 .Stats {
   text-align: center;
-  border: 1px solid black;
-  flex-grow: 1;
+  min-height: 500px;
+  min-width: 200px;
+  background-color: rgb(250, 247, 206);
 }
 
 .Stats li{
   list-style: none;
+}
+
+.Stats img {
+  position: static;
 }

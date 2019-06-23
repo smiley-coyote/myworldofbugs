@@ -20,51 +20,52 @@
 
 @keyframes moveAround {
   0%{
-    transform: translateY(100vh)
+    transform: translateY(65vh)
   }
   100%{
-      transform: translateY(0vh)
+      transform: translateY(-5vh)
   }
 }
 
 @keyframes moveAround2 {
   0%{
-    transform: translate(25vh, 100vh)
+    transform: translate(25vh, 70vh)
   }
   100%{
-      transform: translate(25vh, 0vh)
+      transform: translate(25vh, -5vh)
   }
 }
 
 @keyframes moveAround3 {
   0%{
-    transform: translate(65vh, 100vh)
+    transform: translate(65vh, 75vh)
   }
   100%{
-      transform: translate(65vh, 0vh)
+      transform: translate(65vh, -5vh)
   }
 }
 
 @keyframes moveAround4 {
   0%{
-    transform: translate(75vh, 100vh)
+    transform: translate(75vh, 80vh)
   }
   100%{
-      transform: translate(75vh, 0vh)
+      transform: translate(75vh, -5vh)
   }
 }
 
 @keyframes moveAround5 {
   0%{
-    transform: translate(45vh, 100vh)
+    transform: translate(45vh, 75vh)
   }
   100%{
-      transform: translate(45vh, 0vh)
+      transform: translate(45vh, -5vh)
   }
 }
 
 img {
-  width: 20px;
+  position: absolute;
+  width: 30px;
   height: auto;
 }
 

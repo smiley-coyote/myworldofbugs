@@ -1,5 +1,7 @@
 .Play {
-  background-color: rgb(212, 212, 212);
+  position: relative;
+  background-color: white;
   flex-grow: 3;
   overflow: hidden;
+  min-height: 500px;
 }
