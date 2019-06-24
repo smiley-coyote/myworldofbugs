@@ -1,24 +1,80 @@
 .bug1 {
   animation: moveAround 15s linear infinite;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .bug2 {
   animation: moveAround2 10s linear infinite;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .bug3 {
   animation: moveAround3 12s linear infinite;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .bug4 {
   animation: moveAround4 8s linear infinite;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .bug5 {
   animation: moveAround5 14s linear infinite;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+
 @keyframes moveAround {
+  0% { 	transform: rotate(0deg) scaleX(-1) translate(120px, 100px); }
+  50% {  transform: rotate(180deg) scaleX(-1) translate(120px, 100px); }
+  100%{ transform: rotate(360deg) scaleX(-1) translate(120px, 100px); }
+}
+
+@keyframes moveAround2 {
+  0% { 	transform: rotate(360deg) translateX(150px); }
+  50% {  transform: rotate(180deg) translateX(250px); }
+  100%{ transform: rotate(0deg) translateX(150px); }
+}
+
+@keyframes moveAround3 {
+  0% { 	transform: rotate(0deg) scaleX(-1) translateX(150px); }
+  50% {  transform: rotate(180deg) scaleX(-1) translateX(250px); }
+  100%{ transform: rotate(360deg) scaleX(-1) translateX(150px); }
+}
+
+@keyframes moveAround4 {
+  0% { 	transform: rotate(360deg) translateX(150px); }
+  50% {  transform: rotate(180deg) translateX(250px); }
+  100%{ transform: rotate(0deg) translateX(150px); }
+}
+
+@keyframes moveAround5 {
+  0% { 	transform: rotate(0deg) scaleX(-1) translateX(150px); }
+  50% {  transform: rotate(180deg) scaleX(-1) translateX(250px); }
+  100%{ transform: rotate(360deg) scaleX(-1) translateX(150px); }
+}
+
+/* @keyframes moveAround {
   0%{
     transform: translateY(65vh)
   }
@@ -61,12 +117,19 @@
   100%{
       transform: translate(45vh, -5vh)
   }
+} */
+
+@keyframes rotate {
+  0% { 	transform: rotate(360deg) translateX(150px); }
+  50% {  transform: rotate(180deg) translateX(250px); }
+  100%{ transform: rotate(0deg) translateX(150px); }
 }
 
 img {
   position: absolute;
-  width: 30px;
+  width: 40px;
   height: auto;
+  z-index: 1;
 }
 
 img:hover{

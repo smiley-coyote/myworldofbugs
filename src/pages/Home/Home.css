@@ -5,6 +5,7 @@
   margin: 0 auto;
 } */
 
+
 .game{
   display: flex;
   flex-direction: row;
@@ -13,7 +14,7 @@
 }
 
 @media only screen and (max-width: 930px){
-  .gameWindow{
-    width: 100%;
+  .game{
+    flex-direction: column;
   }
 }

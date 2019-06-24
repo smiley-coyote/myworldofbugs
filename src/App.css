@@ -11,8 +11,14 @@
 
 .mainDiv{
   width: 75%;
-
   margin: 0 auto;
   min-height: 500px;
+  overflow: scroll;
+}
+
+@media only screen and (max-width: 930px){
+  .mainDiv{
+    width: 100%;
+  }
 }
 

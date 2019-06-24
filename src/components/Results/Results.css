@@ -1,3 +1,21 @@
 .Results {
-  display: none;
+  background-color: white;
+  min-height: 500px;
+  display: relative;
+  overflow: scroll;
+}
+
+.Results div img {
+  width: 400px;
+  height: auto;
+  align-self: flex-start;
+}
+
+.Results div{
+  height: 400px;
+  width: 100%;
+}
+
+.Results .bug-description {
+  float: right;
 }

@@ -4,7 +4,7 @@ import "./Play.css";
 // Component for the Stats 
 
 const Play = props => (
- <div className="Play">
+ <div onClick={props.onClick} className="Play">
    {props.children}
  </div>
 );

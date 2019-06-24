@@ -5,3 +5,9 @@
   overflow: hidden;
   min-height: 500px;
 }
+
+@media only screen and (max-width: 930px){
+  .Play{
+    order: 1;
+  }
+}

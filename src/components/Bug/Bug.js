@@ -11,6 +11,8 @@ const Bug = props => (
  name={props.name}
  alt={props.alt}
  index={props.index}
+ image={props.image}
+ description={props.description}
  className={props.className}
  />
 );

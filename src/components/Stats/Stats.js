@@ -13,14 +13,16 @@ class Stats extends Component {
   render(){
     return (
       <div className="Stats">
-      <h3>Tries left:</h3>
-      <p>{this.props.counter}</p>
+      <h3>Stamina left:</h3>
+      <p>{this.props.stamina}</p>
       <h3>Catch me!</h3>
-      <p><img src={this.props.catchNext.src} alt={this.props.catchNext.alt} /></p>
+      <div className='showcase'><p><img src={this.props.catchNext.src} alt={this.props.catchNext.alt} /></p></div>
       <h3>Current Bugs:</h3>
+      <div className="currentBugs">
       <p>
         {this.props.bugsList}
       </p>
+      </div>
     </div>
     )
   }

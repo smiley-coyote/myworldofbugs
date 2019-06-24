@@ -7,76 +7,93 @@ import Results from '../../components/Results';
 import AllBugs from '../../bugsfile';
 import BugClass from '../../bugsclasses';
 
-// Component for the Navbar
 
+// Component for the Navbar
+const bugIndex = AllBugs;
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       bugsCaught: [],
-      bugsAll: AllBugs,
+      bugsAll: [],
       catchNext: {},
-      counter: 3,
-      bugsCounter: 5
-      // bugClasses: BugClass
+      stamina: 6,
+      bugsCounter: 5,
+      gameDone: false
     }
     this.catchBug = this.catchBug.bind(this);
     this.getRandomBug = this.getRandomBug.bind(this);
     this.bugRandomClass = this.bugRandomClass.bind(this);
     this.shuffleClasses = this.shuffleClasses.bind(this);
-    
+    this.refreshGame = this.refreshGame.bind(this);
+    this.onMiss = this.onMiss.bind(this);
   }
-  
-  componentDidMount(){
-    this.getRandomBug();
-    this.shuffleClasses(BugClass);
+
+  componentDidMount() {
+ this.refreshGame();
   }
   // Catching the bug
 
-  catchBug(event){
+  catchBug(event) {
     const currentBugs = this.state.bugsCaught;
     let catchNextId = this.state.catchNext.id;
     let caughtBugId = event.target.id;
-    if(catchNextId === caughtBugId){
-      AllBugs[event.target.getAttribute('index')].caught = true
+    if (catchNextId === caughtBugId) {
+      bugIndex[event.target.getAttribute('index')].caught = true
       currentBugs.push({
         name: event.target.getAttribute('name'),
+        image: event.target.getAttribute('image'),
+        description: event.target.getAttribute('description'),
         src: event.target.src,
         id: event.target.id,
         className: event.target.className,
         caught: true
       })
       this.setState({
-        bugsCaught: currentBugs 
+        bugsCaught: currentBugs
       })
+      
       this.getRandomBug();
-    }else {
-      let currentCounter = this.state.counter;
-      if(currentCounter > 0){
-      currentCounter--;
+    } else {
+      let currentStamina = this.state.stamina;
+      if (currentStamina > 0) {
+        currentStamina--;
+        this.setState({
+          stamina: currentStamina
+        })
+        alert('wrong bug!')
+      } else {
+        alert('you lose!')
+      }
+    }
+
+  }
+
+  // Missing the bug
+  onMiss() {
+    let currentStamina = this.state.stamina;
+    if (currentStamina > 0) {
+      currentStamina--;
       this.setState({
-        counter: currentCounter
+        stamina: currentStamina
       })
-      alert('wrong bug!')
-    } else{
-      alert('you lose!')
+      if (currentStamina === 0) {
+        alert('you lose')
+      }
     }
-    }
-  
   }
   // Randomizes bugs class for animations
-  bugRandomClass(randomBugClasses){
-    let bugsArr = AllBugs;
+  bugRandomClass(randomBugClasses) {
+    let bugsArr = bugIndex;
     let classesArr = randomBugClasses;
     let bugsArrNew = [];
 
-    for(let i = 0; i<bugsArr.length; i++){
+    for (let i = 0; i < bugsArr.length; i++) {
       bugsArr[i].className = classesArr[i]
       bugsArrNew.push(bugsArr[i])
     }
-    console.log(bugsArrNew)
     this.setState({
       allBugs: bugsArrNew
     })
@@ -84,89 +101,117 @@ class Home extends React.Component {
 
   shuffleClasses(bugsArr) {
     let currentIndex = bugsArr.length, temporaryValue, randomIndex;
-  
+
     // While there remain elements to shuffle...
     while (0 !== currentIndex) {
-  
+
       // Pick a remaining element...
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;
-  
+
       // And swap it with the current element.
       temporaryValue = bugsArr[currentIndex];
       bugsArr[currentIndex] = bugsArr[randomIndex];
       bugsArr[randomIndex] = temporaryValue;
     }
-  
+
     this.bugRandomClass(bugsArr);
   }
 
   // Randomizes bugs to catch
   getRandomBug() {
-    let availableBugs = AllBugs.filter(bug => !bug.caught);
+    console.log(this.state.gameDone)
+    let availableBugs = bugIndex.filter(bug => !bug.caught);
     let bugCounter = this.state.bugsCounter;
-    if(bugCounter > 0){
+    if (bugCounter > 0) {
       let bugIndex = Math.floor(Math.random() * availableBugs.length);
       let nextBug = availableBugs[bugIndex];
       bugCounter--;
-      if(bugCounter === 0){
-        setTimeout(function(){ alert("you win!"); }, 1000);
+      if (bugCounter === 0) {
         this.setState({
-          catchNext: {src: 'checkmark.png', alt: 'checkmark'},
-          bugsAll: []
+          catchNext: { src: 'checkmark.png', alt: 'checkmark' },
+          bugsAll: [],
+          gameDone: true
         })
-      }else{
+      } else {
         this.setState({
           catchNext: nextBug,
           bugsCounter: bugCounter
         })
       }
-    } 
-  
+    }
+
   }
 
-  render(){
+  // Start game over
+
+  refreshGame(){
+    let allBugs = bugIndex;
+    for (let i = 0; i < allBugs.length; i++) {
+      allBugs[i].caught = false;
+    }
+    this.setState({
+      bugsAll: allBugs,
+      gameDone: false
+    })
+    this.getRandomBug();
+    this.shuffleClasses(BugClass);
+  }
+
+  render() {
     // list of caught bugs
-    const bugsList = this.state.bugsCaught.map((item, key)=>
+    const bugsList = this.state.bugsCaught.map((item, key) =>
       <li key={item.id}>
         <img src={item.src} alt={item.alt} />
       </li>
     );
     // all remaining bugs left in play area
-    const bugsLeft = this.state.bugsAll.map(function(item,index){
-    if(!item.caught){
-      return <Bug 
-      onClick={this.catchBug}
-      key={index}
-      name={item.name}
-      id={item.id}
-      alt={item.alt}
-      src={item.src}
-      caught={item.caught}
-      index={index}
-      className={item.className}
-      />
-    }
-  }.bind(this))
+    const bugsLeft = this.state.bugsAll.map(function (item, index) {
+      if (!item.caught) {
+        return <Bug
+          onClick={this.catchBug}
+          key={index}
+          name={item.name}
+          id={item.id}
+          alt={item.alt}
+          src={item.src}
+          caught={item.caught}
+          index={index}
+          image={item.image}
+          description={item.description}
+          className={item.className}
+        />
+      }
+    }.bind(this))
+    return (
+      <div className="game-window">
+        {!this.state.gameDone ? (
+            <div className="game">
+              <Play onClick={this.onMiss}>
+                {bugsLeft}
+              </Play>
 
-    return(
-      <div>
-      <Results>
-        <h2>Results Page</h2>
-      </Results>
-      <div className="game">
-      <Play>
-       {bugsLeft}
-      </Play>
+              <Stats
+                stamina={this.state.stamina}
+                catchNext={this.state.catchNext}
+                bugsList={bugsList}
+              />
+            </div>
+        ) : (
+            <Results>
+              {this.state.bugsCaught.map(bug =>(
+                <div key={bug.id}>
+                <h2>{bug.name}</h2>
+                <p><img src={bug.image} alt={bug.alt} /></p>
+                <p className="bug-description">{bug.description}</p>
+                </div>
+              ))}
+              <button onClick={this.refreshGame}>Play Again!</button>
+            </Results>
+          )}
 
-      <Stats 
-      counter = {this.state.counter}
-      catchNext = {this.state.catchNext}
-      bugsList = {bugsList}
-      />
       </div>
-      </div>
-      
+
     );
   }
 
