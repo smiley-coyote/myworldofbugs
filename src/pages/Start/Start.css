@@ -1,0 +1,14 @@
+.Start {
+  margin: 0 auto;
+  text-align: center;
+  background-color: white;
+  height: 500px;
+}
+
+.Start a {
+  font-size: 40px;
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 5px;
+  background-color: lightgray;
+}

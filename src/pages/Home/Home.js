@@ -218,7 +218,9 @@ class Home extends React.Component {
                 <p className="bug-description">{bug.description}</p>
                 </div>
               ))}
-              <button onClick={this.refreshGame}>Play Again!</button>
+              {this.state.bugsCaught.length>0 ?( <button onClick={this.refreshGame}>Free Bugs!</button>):( <button onClick={this.refreshGame}>Play Again!</button>)
+              }
+             
             </Results>
           )}
 
