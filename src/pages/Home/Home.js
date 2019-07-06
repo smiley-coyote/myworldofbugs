@@ -32,7 +32,12 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
- this.refreshGame();
+    this.setState({
+      bugsAll: bugIndex
+    })
+    this.getRandomBug();
+    this.shuffleClasses(BugClass);
+    console.log(this.state.gameDone);
   }
   // Catching the bug
 
@@ -81,6 +86,9 @@ class Home extends React.Component {
       })
       if (currentStamina === 0) {
         alert('you lose')
+        this.setState({
+          gameDone: true
+        })
       }
     }
   }
@@ -120,7 +128,6 @@ class Home extends React.Component {
 
   // Randomizes bugs to catch
   getRandomBug() {
-    console.log(this.state.gameDone)
     let availableBugs = bugIndex.filter(bug => !bug.caught);
     let bugCounter = this.state.bugsCounter;
     if (bugCounter > 0) {
@@ -151,11 +158,16 @@ class Home extends React.Component {
       allBugs[i].caught = false;
     }
     this.setState({
+      bugsCaught: [],
       bugsAll: allBugs,
+      catchNext: {},
+      stamina: 6,
+      bugsCounter: 5,
       gameDone: false
     })
     this.getRandomBug();
     this.shuffleClasses(BugClass);
+    console.log(this.state.gameDone);
   }
 
   render() {
