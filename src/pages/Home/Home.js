@@ -214,11 +214,13 @@ class Home extends React.Component {
               {this.state.bugsCaught.map(bug =>(
                 <div key={bug.id}>
                 <h2>{bug.name}</h2>
-                <p><img src={bug.image} alt={bug.alt} /></p>
+                <div className="bug-card">
+                <p className="bug-image"><img src={bug.image} alt={bug.alt} /></p>
                 <p className="bug-description">{bug.description}</p>
                 </div>
+                </div>
               ))}
-              {this.state.bugsCaught.length>0 ?( <button onClick={this.refreshGame}>Free Bugs!</button>):( <button onClick={this.refreshGame}>Play Again!</button>)
+              {this.state.bugsCaught.length>0 ?( <button onClick={this.refreshGame}>Release Bugs!</button>):( <button onClick={this.refreshGame}>Play Again!</button>)
               }
              
             </Results>

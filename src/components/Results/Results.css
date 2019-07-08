@@ -3,19 +3,39 @@
   min-height: 500px;
   display: relative;
   overflow: scroll;
+  text-align: center;
 }
 
 .Results div img {
   width: 400px;
   height: auto;
-  align-self: flex-start;
 }
 
 .Results div{
   height: 400px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.Results .bug-description {
-  float: right;
+.Results div h1{
+  text-align: center;
+}
+
+.Results .bug-card {
+  display: flex;
+  flex-direction: row;
+}
+
+.Results .bug-card .bug-image{
+  width: 400px;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.Results .bug-card .bug-description {
+  padding: 20px;
+  width: 600px;
+  text-align: left;
 }

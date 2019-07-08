@@ -130,13 +130,3 @@
   100%{ transform: rotate(0deg) translateX(150px); }
 }
 
-img {
-  position: absolute;
-  width: 40px;
-  height: auto;
-  z-index: 1;
-}
-
-img:hover{
-  cursor: pointer;
-}

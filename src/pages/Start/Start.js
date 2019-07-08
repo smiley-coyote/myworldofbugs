@@ -6,8 +6,11 @@ import { Link } from "react-router-dom";
 
 const Start = props => (
  <div className="Start">
-   <h3>Start Page</h3>
+   <div>
+   <h3>Welcome to My World of Bugs!</h3>
+   <p>Catch the correct bug, but don't run out of energy!</p>
    <Link to='/play'>Start</Link>
+   </div>
  </div>
 );
 

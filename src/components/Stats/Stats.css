@@ -11,7 +11,9 @@
 
 .Stats img {
   position: static;
-  margin-top: 10px;
+  margin-top: 5px;
+  width: 40px;
+  height: auto;
 }
 
 .Stats .showcase {
@@ -32,3 +34,5 @@
     min-height: 100px;
   }
 }
+
+
