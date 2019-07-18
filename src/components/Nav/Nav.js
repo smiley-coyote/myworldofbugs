@@ -12,7 +12,7 @@ const Nav = props => (
       </li>
       
       <li>
-        <Link to='/play'>Play</Link> |  <Link to='/'>Quit</Link>  |  <Link to='/about'>About</Link>
+        <Link to='/'>Start</Link> |  <Link to='/play'>Play</Link>  |  <Link to='/about'>About</Link>
       </li>
     </ul>
   </nav>

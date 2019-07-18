@@ -1,27 +1,145 @@
-.Start {
-  margin: 0 auto;
-  text-align: center;
-  background-color: white;
-  height: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+.cloud {
+  position: absolute;
+  z-index: -1;
+  width: 200px;
+  height: auto;
 }
 
-.Start a {
+.spider {
+  position: relative;
+  width: 100px;
+  height: auto;
+  /* left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto; */
+  margin-top: -10px;
+  animation: swing 10s infinite;
+  transform: rotate(25deg) translateX(-20px)
+}
+
+@keyframes swing{
+50%{
+  transform: rotate(-25deg) translateX(20px)
+}
+
+  100%{
+    transform: rotate(25deg) translateX(-20px)
+  }
+
+
+
+}
+
+.start-window {
+  margin: 100px auto;
+  text-align: center;
+}
+
+.start-body {
+  margin: 0 auto;
+  width: 450px;
+  height: 500px;
+  border-radius: 10px;
+  border: 5px solid black;
+  background-color: rgba(255, 255, 255, 0.459);
+  opacity: 0;
+  animation: appear2 1s 1.5s ease-out forwards;
+  overflow: hidden;
+}
+
+
+
+
+
+.Start .start-body a {
+  display: block;
   font-size: 40px;
   text-decoration: none;
-  border: 1px solid black;
   padding: 5px;
-  background-color: lightgray;
+  border-radius: 5px;
   width: 200px;
   margin: 0 auto;
 }
 
 .Start h3{
   font-size: 2em;
+  margin-top: 50px;
+  opacity: 0;
+  animation: appear 2s 1s forwards;
+}
+
+@keyframes appear {
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes appear2 {
+  0%{
+    margin-top: 50px
+  }
+  100%{
+    margin-top: 0px;
+    opacity: 1;
+  }
 }
 
 .Start p{
   padding: 20px;
+}
+
+.cloud1 {
+  animation: move1 39s infinite linear;
+}
+
+.cloud2 {
+  animation: move2 58s forwards linear;
+}
+
+
+.cloud3 {
+  animation: move3 60s forwards linear;
+}
+
+
+.cloud4 {
+  animation: move4 200s infinite linear;
+}
+
+
+@keyframes move1 {
+  0%{
+    transform: translate(-250px, 100px)
+  }
+  100%{
+    transform: translate(1000px, 100px)
+  }
+}
+
+@keyframes move2 {
+  0%{
+    transform: translate(-500px, 400px)
+  }
+  100%{
+    transform: translate(700px, 400px)
+  }
+}
+
+@keyframes move3 {
+  0%{
+    transform: translate(-100px, -200px)
+  }
+  100%{
+    transform: translate(700px, -200px)
+  }
+}
+
+@keyframes move4 {
+  0%{
+    transform: translate(-900px, -100px)
+  }
+  100%{
+    transform: translate(700px, -100px)
+  }
 }

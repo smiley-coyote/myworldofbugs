@@ -14,6 +14,7 @@ const Bug = props => (
  image={props.image}
  description={props.description}
  className={props.className}
+ type={props.type}
  />
 );
 
