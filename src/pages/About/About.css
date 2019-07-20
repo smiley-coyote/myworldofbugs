@@ -1,0 +1,40 @@
+.about-window {
+  height: auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 5px 10px #888888;
+}
+
+.about-window .about-contents h2 {
+  text-align: center;
+}
+
+.about-contents {
+  margin: 0 auto;
+  width: 100%;
+  padding: 20px 100px;
+}
+
+.about-window-images {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.svg-images img {
+  width: 60px;
+  height: auto;
+}
+
+.jpg-images img {
+  width: 230px;
+  height: auto;
+  align-self: center;
+  padding: 10px;
+}
+
+.about-window .about-contents p {
+  margin-top: 20px;
+  margin-bottom: 25px;
+}

@@ -79,6 +79,10 @@
   margin-right: auto;
 }
 
+#powerup {
+  width: 30px;
+  height: auto;
+}
 
 @keyframes moveAround {
   0% { 	transform: rotate(0deg) scaleX(-1) translate(120px, 100px); }

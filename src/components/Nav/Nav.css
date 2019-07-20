@@ -24,6 +24,11 @@
   text-align: center;
 }
 
+.navbar .nav-links {
+  font-size: 18px;
+  align-self: center;
+}
+
 .navbar a {
   text-decoration: none;
   color: black;

@@ -11,6 +11,7 @@ import Nav from "../../components/Nav";
 // Component for the Navbar
 const bugIndex = AllBugs;
 
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -19,10 +20,12 @@ class Home extends React.Component {
       bugsCaught: [],
       bugsAll: bugIndex,
       catchNext: {},
-      stamina: 6,
+      stamina: 4,
       bugsCounter: 3,
       gameDone: false,
-      gameResults: 'Your results'
+      gameResults: 'Your results',
+      tips: '',
+      tipsStyle: ''
     }
     this.catchBug = this.catchBug.bind(this);
     this.getRandomBug = this.getRandomBug.bind(this);
@@ -34,27 +37,32 @@ class Home extends React.Component {
     this.gameLose = this.gameLose.bind(this);
     this.checkGame = this.checkGame.bind(this);
     this.powerUp = this.powerUp.bind(this);
+    this.runTips = this.runTips.bind(this);
   }
 
   componentDidMount() {
     this.shuffleClasses(BugClass);
-    this.checkGame();
+    this.setState({
+      catchNext: this.getRandomBug()
+    })
   }
 
   // checking current game conditions
 
   checkGame(){
-    const {bugsCounter, gameDone} = this.state;
+    const {bugsCounter, gameDone, catchNext} = this.state;
     if(gameDone){
       this.setState({
         bugsCaught: [],
         catchNext: this.getRandomBug(),
-        stamina: 6,
+        stamina: 4,
         bugsCounter: 3,
-        gameDone: false
+        gameDone: false,
+        tips: '',
+        tipsStyle: ''
       })
     }else {
-      if(bugsCounter > 0){
+      if(bugsCounter > 0 && catchNext.clicked){
         this.setState({
           catchNext: this.getRandomBug()
         })
@@ -70,7 +78,7 @@ class Home extends React.Component {
 
   powerUp(){
     this.setState({
-      stamina: 6
+      stamina: 4
     })
   }
 
@@ -87,8 +95,18 @@ class Home extends React.Component {
 
   gameLose(){
     this.setState({
-      gameResults: 'You Lose!',
+      gameResults: 'You ran out of stamina!',
       gameDone: true
+    })
+  }
+
+  // run tips
+
+  runTips(){
+   const {catchNext} = this.state
+ 
+    this.setState({
+      tips: 'Catch the ' + catchNext.name + '!'
     })
   }
 
@@ -103,8 +121,14 @@ class Home extends React.Component {
     if(caughtBugId==='powerup'){
       bugIndex[event.target.getAttribute('index')].caught = true
       setTimeout(this.powerUp, 50)
+      this.setState({
+        tips: 'You got a powerup!',
+        tipsStyle: 'swell'
+      })
+      setTimeout(this.runTips, 3000)
     }
     else if (catchNext.id === caughtBugId) {
+      catchNext.clicked = true;
       bugIndex[event.target.getAttribute('index')].caught = true
       currentBugs.push({
         name: event.target.getAttribute('name'),
@@ -117,19 +141,30 @@ class Home extends React.Component {
       })
       this.setState({
         bugsCaught: currentBugs,
-        bugsCounter: newCounter
+        bugsCounter: newCounter,
+        catchNext: catchNext,
+        tips: ''
       })
-     setTimeout(this.checkGame, 40)
-    } 
+     setTimeout(this.checkGame, 0)
+    } else {
+      this.setState({
+        tips: 'Wrong bug!',
+        tipsStyle: 'swell'
+      })
+      setTimeout(this.runTips, 3000)
+    }
 
   }
 
   // Clicking anywhere 
   onAction() {
-    const {stamina} = this.state;
+    const {stamina, bugsCounter} = this.state;
     const newStamina = stamina - 1;
-    if(newStamina === 0){
-      this.gameLose()
+    if(newStamina === 0 && bugsCounter > 0){
+      this.setState({
+        stamina: newStamina
+      })
+      setTimeout(this.gameLose, 1)
     }else{
       this.setState({
         stamina: newStamina
@@ -176,6 +211,8 @@ class Home extends React.Component {
     let availableBugs = bugIndex.filter(bug => !bug.caught && bug.type==='insect');
     let newIndex = Math.floor(Math.random() * availableBugs.length);
     let nextBug = availableBugs[newIndex];
+    nextBug.clicked = false;
+   setTimeout(this.runTips, 3000);
     return nextBug;
 
   }
@@ -227,6 +264,7 @@ class Home extends React.Component {
         {!this.state.gameDone ? (
             <div className="game">
               <Play onClick={this.onAction}>
+              <div className="tips" ><p>{this.state.tips}</p></div>
                 {bugsLeft}
               </Play>
 
@@ -239,6 +277,7 @@ class Home extends React.Component {
         ) : (
             <Results>
               <h1>{this.state.gameResults}</h1>
+              <h4>Your Collection:</h4>
               {this.state.bugsCaught.map(bug =>(
                 <div key={bug.id}>
                 <h2>{bug.name}</h2>

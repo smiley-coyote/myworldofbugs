@@ -11,8 +11,8 @@ const Nav = props => (
         <Link to="/">My World of Bugs</Link>
       </li>
       
-      <li>
-        <Link to='/'>Start</Link> |  <Link to='/play'>Play</Link>  |  <Link to='/about'>About</Link>
+      <li className="nav-links">
+      <Link to='/play'>Play</Link> |  <Link to='/'>Quit</Link>  |  <Link to='/about'>About</Link>
       </li>
     </ul>
   </nav>
