@@ -13,13 +13,19 @@ class Stats extends Component {
   render(){
     return (
       <div className="Stats">
+      <div className='stamina'>
       <h3>Stamina left:</h3>
       <p>{this.props.stamina}</p>
+      </div>
+      <div className='catch-next'>
       <h3>Catch me!</h3>
-      <div className='showcase'><p><img src={this.props.catchNext.src} alt={this.props.catchNext.alt} /></p></div>
-      <h3>Current Bugs:</h3>
+      <div className='showcase'>
+      <p><img src={this.props.catchNext.src} alt={this.props.catchNext.alt} /></p>
+      </div>
+      </div>
       <div className="currentBugs">
-      <p>
+      <h3>Bugs Caught:</h3>
+      <p className='jar'>
         {this.props.bugsList}
       </p>
       </div>

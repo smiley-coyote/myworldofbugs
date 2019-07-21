@@ -9,7 +9,7 @@
   position: relative;
   width: 100px;
   height: auto;
-  margin-top: -10px;
+  margin-top: -15px;
   animation: swing 10s 1.5s infinite;
   transform: rotate(25deg) translateX(-20px)
 }
@@ -139,31 +139,39 @@
   animation: move4 200s infinite linear;
 }
 
+.cloud5 {
+  animation: move5 100s forwards linear;
+}
+
+.cloud6 {
+  animation: move6 40s forwards linear;
+}
+
 
 @keyframes move1 {
   0%{
     transform: translate(-250px, 100px)
   }
   100%{
-    transform: translate(1000px, 100px)
+    transform: translate(1300px, 100px)
   }
 }
 
 @keyframes move2 {
   0%{
-    transform: translate(-500px, 400px)
+    transform: translate(-500px, 550px)
   }
   100%{
-    transform: translate(700px, 400px)
+    transform: translate(1300px, 550px)
   }
 }
 
 @keyframes move3 {
   0%{
-    transform: translate(-100px, -200px)
+    transform: translate(-100px, -160px)
   }
   100%{
-    transform: translate(700px, -200px)
+    transform: translate(1300px, -160px)
   }
 }
 
@@ -172,6 +180,24 @@
     transform: translate(-900px, -100px)
   }
   100%{
-    transform: translate(700px, -100px)
+    transform: translate(1300px, -100px)
+  }
+}
+
+@keyframes move5 {
+  0%{
+    transform: translate(300px, 300px)
+  }
+  100%{
+    transform: translate(1300px, 300px)
+  }
+}
+
+@keyframes move6 {
+  0%{
+    transform: translate(600px, 400px)
+  }
+  100%{
+    transform: translate(1400px, 400px)
   }
 }

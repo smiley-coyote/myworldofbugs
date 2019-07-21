@@ -12,10 +12,29 @@
 }
 
 .Results div{
-  height: 400px;
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+}
+
+.Results button {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.Results button:hover {
+  cursor: pointer;
+  animation: grow .1s forwards;
+}
+
+@keyframes grow {
+  100%{
+    transform: scale(1.1);
+    color: rgb(0, 150, 45);
+  }
 }
 
 .Results div h1{
@@ -25,6 +44,15 @@
 .Results .bug-card {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+}
+
+.Results .bug-card img {
+  align-self: center;
+}
+
+.Results .bug-card li {
+  list-style: none;
 }
 
 .Results .bug-card .bug-image{
@@ -38,4 +66,13 @@
   padding: 20px;
   width: 600px;
   text-align: left;
+}
+
+@media only screen and (max-width: 1200px){
+  .Results .bug-card {
+    flex-direction: column;
+  }
+  .Results div {
+    justify-content: center;
+  }
 }

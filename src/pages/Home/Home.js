@@ -20,8 +20,8 @@ class Home extends React.Component {
       bugsCaught: [],
       bugsAll: bugIndex,
       catchNext: {},
-      stamina: 4,
-      bugsCounter: 3,
+      stamina: 6,
+      bugsCounter: 5,
       gameDone: false,
       gameResults: 'Your results',
       tips: '',
@@ -41,10 +41,15 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    this.shuffleClasses(BugClass);
+    let allBugs = bugIndex;
+    for (let i = 0; i < allBugs.length; i++) {
+      allBugs[i].caught = false;
+    }
     this.setState({
-      catchNext: this.getRandomBug()
+      catchNext: this.getRandomBug(),
+      bugsAll: allBugs
     })
+    this.shuffleClasses(BugClass);
   }
 
   // checking current game conditions
@@ -55,8 +60,8 @@ class Home extends React.Component {
       this.setState({
         bugsCaught: [],
         catchNext: this.getRandomBug(),
-        stamina: 4,
-        bugsCounter: 3,
+        stamina: 6,
+        bugsCounter: 5,
         gameDone: false,
         tips: '',
         tipsStyle: ''
@@ -78,7 +83,7 @@ class Home extends React.Component {
 
   powerUp(){
     this.setState({
-      stamina: 4
+      stamina: 6
     })
   }
 
@@ -277,13 +282,16 @@ class Home extends React.Component {
         ) : (
             <Results>
               <h1>{this.state.gameResults}</h1>
+              <button onClick={this.refreshGame}>Release Bugs!</button>
               <h4>Your Collection:</h4>
               {this.state.bugsCaught.map(bug =>(
                 <div key={bug.id}>
-                <h2>{bug.name}</h2>
                 <div className="bug-card">
-                <p className="bug-image"><img src={bug.image} alt={bug.alt} /></p>
-                <p className="bug-description">{bug.description}</p>
+                <li className="bug-image"><img src={bug.image} alt={bug.alt} /></li>
+                <li className="bug-description">
+                <h2>{bug.name}</h2>
+                {bug.description}
+                </li>
                 </div>
                 </div>
               ))}

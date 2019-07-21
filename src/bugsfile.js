@@ -5,7 +5,7 @@ const AllBugs = [
   alt: 'ladybug',
   src: 'images/ladybug.svg',
   image: 'images/ladybug.jpg',
-  description: 'Ladybugs are generally considered useful insects, because many species prey on herbivorous homopterans such as aphids or scale insects, which are agricultural pests.',
+  description: 'According to legend, European crops in the Middle Ages were plagued by pests. After farmers began to pray to the Virgin Mary, they began seeing ladybugs in their fields and the crops were saved from the pests, giving them their name “ladybug”. Ladybugs are considered useful insects since they prey on agricultural pests such as aphids and scale insects. The picture represents each stage of the ladybug’s life cycle - (1) eggs (2) larva (3) pupa (4) adult. I was able to find every stage just on one plant alone in my backyard.',
   className: '',
   caught: false,
   type: 'insect'
@@ -16,7 +16,7 @@ const AllBugs = [
   alt: 'dragonfly',
   src: 'images/dragonfly.svg',
   image: 'images/dragonfly.jpg',
-  description: 'Their common behavioural purpose is starting a new colony, to expand their mother colonies etc. Colonies of ants produces alates. It is a flight-based form of reproductive technique.',
+  description: 'Dragonflies live on every content except for Antartica and are predators that mostly snack on mosquitos and gnats. They are relatives to an ancient group of dragonflies that were the largest known insects that ever lived, with wingspans up to 30 inches! Today, their populations around the world are threatened due to their loss of wetland habitats from human expansion.',
   className: '',
   caught: false,
   type: 'insect'
@@ -27,7 +27,7 @@ const AllBugs = [
   alt: 'butterfly',
   src: 'images/butterfly.svg',
   image: 'images/butterfly.jpg',
-  description: 'Apatura iris (a.k.a purple emperor) is widely distributed in dense, broadleaved woodlands throughout Central Europe including southern Britain, and in suitably temperate parts of Asia, including central and western China.[2][4] Different subspecies are found across the region (see below).',
+  description: 'Named for its eye-shaped spots, the common buckeye is one of the most seen butterflies in the southern United States and can be found flapping about in all 67 counties of Florida during the winter months. They migrate north in the summer as far as southern Canada. They enjoy sunny and open landscapes and feed on certain types of flowers.',
   className: '',
   caught: false,
   type: 'insect'
@@ -38,7 +38,7 @@ const AllBugs = [
   alt: 'honey bee',
   src: 'images/bee.svg',
   image: 'images/bee.jpg',
-  description: 'A honey bee (also spelled honeybee) is a eusocial flying insect within the genus Apis of the bee clade. They are known for construction of perennial, colonial nests from wax, for the large size of their colonies, and for their surplus production and storage of honey, distinguishing their hives as a prized foraging target of many animals, including honey badgers, bears and human hunter-gatherers.',
+  description: 'They are known for their large colonies, wax nests, surplus production of honey, and defensive capabilities. Honey bees only represent a small fraction of the roughly 20,000 known species of bees. They play a vital role in our environment by pollinating plants and flowers. Unfortunately, their population has been on a rapid decline, which could become quite detrimental to our environment. Thanks to bees, humans are able to enjoy many fresh fruits and vegetables such as strawberries, blueberries, apples, broccoli, nuts, and asparagus.',
   className: '',
   caught: false,
   type: 'insect'
@@ -49,7 +49,7 @@ const AllBugs = [
   alt: 'Spiny Orb-weaver Spider',
   src: 'images/spinyorbweaver.svg',
   image: 'images/spinyorbweaver.jpg',
-  description: 'The common green bottle fly (Lucilia sericata) is a blow fly found in most areas of the world, and the most well-known of the numerous green bottle fly species. It is 10–14 mm long, slightly larger than a house fly, and has brilliant, metallic, blue-green or golden coloration with black markings. It has short, sparse black bristles (setae) and three cross-grooves on the thorax. The wings are clear with light brown veins, and the legs and antennae are black. The (larvae) of the fly may be used for maggot therapy.',
+  description: 'These species of spiders are easily distinguished from other species due to their red or black spikes and skull pattern bodies. The male has no spikes and is smaller than the female. During reproduction, the male spider enters the web of the female and uses a 4-tap rhythmic-pattern drumming to let the female know that a male has entered her web. The female approaches the male and straps him down to her web with silk and then proceeds to copulate. She’ll keep the male strapped down to her web in case she wants to mate again or have a late night snack.',
   className: '',
   caught: false,
   type: 'insect'
@@ -60,7 +60,7 @@ const AllBugs = [
   alt: 'Green Sweat Bee',
   src: 'images/greenbee.svg',
   image: 'images/greenbee.jpg',
-  description: 'The common green bottle fly (Lucilia sericata) is a blow fly found in most areas of the world, and the most well-known of the numerous green bottle fly species. It is 10–14 mm long, slightly larger than a house fly, and has brilliant, metallic, blue-green or golden coloration with black markings. It has short, sparse black bristles (setae) and three cross-grooves on the thorax. The wings are clear with light brown veins, and the legs and antennae are black. The (larvae) of the fly may be used for maggot therapy.',
+  description: 'Florida is home to more than 60 species of bees. The metallic green sweat bees stand out the most with their beautiful shiny green bodies. They are attracted to human sweat, and will lap it up, hence the name “sweat bee”. It’s thought that they use the sweat as a salty, protein-rich resource to give to their young. Unlike the honeybee, sweat bees are solitary nesters and nest in the ground. These bees are just as valuable to our environment as pollinator as honeybees.',
   className: '',
   caught: false,
   type: 'insect'
@@ -71,7 +71,7 @@ const AllBugs = [
   alt: 'Eastern Lubber Grasshopper',
   src: 'images/lubbergrasshopper.svg',
   image: 'images/lubbergrasshopper.jpg',
-  description: 'The common green bottle fly (Lucilia sericata) is a blow fly found in most areas of the world, and the most well-known of the numerous green bottle fly species. It is 10–14 mm long, slightly larger than a house fly, and has brilliant, metallic, blue-green or golden coloration with black markings. It has short, sparse black bristles (setae) and three cross-grooves on the thorax. The wings are clear with light brown veins, and the legs and antennae are black. The (larvae) of the fly may be used for maggot therapy.',
+  description: 'The name “Lubber” is derived from the old English word “lobre” which means lazy or clumsy. This name is appropriate for them because even though they have wings, they do not fly and mostly get around by walking or crawling. These majestic-looking creatures are well known for both their size and unique coloration. They can grow up to 3 inches, and in large enough numbers can cause serious damage to Florida crops. To defend themselves, the insect emits a foul-smelling and foul-tasting secretion. They also set off a loud hissing sound that can scare animals.',
   className: '',
   caught: false,
   type: 'insect'
@@ -82,7 +82,7 @@ const AllBugs = [
   alt: 'Garden Orb-weaver Spider',
   src: 'images/gardenorbweaver.svg',
   image: 'images/gardenorbweaver.jpg',
-  description: 'The common green bottle fly (Lucilia sericata) is a blow fly found in most areas of the world, and the most well-known of the numerous green bottle fly species. It is 10–14 mm long, slightly larger than a house fly, and has brilliant, metallic, blue-green or golden coloration with black markings. It has short, sparse black bristles (setae) and three cross-grooves on the thorax. The wings are clear with light brown veins, and the legs and antennae are black. The (larvae) of the fly may be used for maggot therapy.',
+  description: 'There are many different species of Orb-weaver spiders. Some are known in Florida as “Banana Spiders”. The Orb-weaver spiders are quite the engineers when it comes to building their webs. They first start by dropping down a line of web and wait for the wind to float them over to another surface. Once they secure the line to that surface, they drop down again and produce a ‘Y’ shape. After the rest of the web is constructed, a final spiral is woven into the center.',
   className: '',
   caught: false,
   type: 'insect'

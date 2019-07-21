@@ -30,6 +30,8 @@ class Start extends React.Component {
      <img className='cloud cloud2' src='images/cloud.svg' alt='cloud' />
      <img className='cloud cloud3' src='images/cloud.svg' alt='cloud' />
      <img className='cloud cloud4' src='images/cloud.svg' alt='cloud' />
+     <img className='cloud cloud5' src='images/cloud.svg' alt='cloud' />
+     <img className='cloud cloud6' src='images/cloud.svg' alt='cloud' />
      <div className="start-window">
    <h3>Welcome to My World of Bugs!</h3>
    <div className='start-body'>
@@ -49,7 +51,7 @@ class Start extends React.Component {
        <li>Find and catch the correct insect</li>
        <li>Every mouse click costs 1 stamina</li>
        <li>Click on a mushroom to regain stamina</li>
-       <li>Catch 3 insects to win, but don't run out of stamina!</li>
+       <li>Catch 5 insects to win, but don't run out of stamina!</li>
      </ol>
    </div>
    </div>
