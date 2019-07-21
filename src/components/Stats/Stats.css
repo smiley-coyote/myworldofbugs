@@ -1,3 +1,5 @@
+/* Stats section */
+
 .Stats {
   text-align: center;
   min-height: 500px;
@@ -11,11 +13,14 @@
   list-style: none;
 }
 
-.Stats .showcase img {
-  position: static;
-  width: 40px;
-  height: auto;
+
+/* Stats stamina */
+
+.stamina p {
+  font-size: 29px;
 }
+
+/* Stats catch next */
 
 .Stats .showcase {
   margin: 0 auto;
@@ -26,7 +31,15 @@
   border: 2px solid black;
 }
 
-.jar {
+.Stats .showcase img {
+  position: static;
+  width: 40px;
+  height: auto;
+}
+
+/* Stats bugs caught */
+
+.Stats .currentBugs .jar {
   margin: 0 auto 20px;
   padding-top: 10px;
   border-radius: 20px;
@@ -53,10 +66,6 @@
   100%{ transform: rotate(360deg) scaleX(-1) translate(30px, 20px); }
 }
 
-.stamina p {
-  font-size: 29px;
-}
-
 
 @media only screen and (max-width: 930px){
   .Stats{
@@ -68,7 +77,7 @@
   .currentBugs p li{
     display: inline;
   }
-  .jar {
+  .Stats .currentBugs .jar {
     height: 100px;
   }
 

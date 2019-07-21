@@ -81,3 +81,13 @@
     transform: translateY(0px) scale(1);
   }
 }
+
+@media only screen and (max-width: 930px){
+  .about-contents {
+    padding: 20px 20px;
+  }
+  .svg-images img {
+    width: 45px;
+    height: auto;
+  }
+}

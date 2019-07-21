@@ -1,3 +1,5 @@
+/* results section */
+
 .Results {
   background-color: white;
   min-height: 500px;
@@ -6,16 +8,20 @@
   text-align: center;
 }
 
-.Results div img {
-  width: 400px;
-  height: auto;
-}
-
 .Results div{
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+.Results div img {
+  width: 400px;
+  height: auto;
+}
+
+.Results div h1{
+  text-align: center;
 }
 
 .Results button {
@@ -37,9 +43,7 @@
   }
 }
 
-.Results div h1{
-  text-align: center;
-}
+/* Results bug card */
 
 .Results .bug-card {
   display: flex;
@@ -74,5 +78,17 @@
   }
   .Results div {
     justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 500px){
+  .Results {
+    width: 100%;
+  }
+  .Results .bug-card .bug-description{
+    width: 100%;
+  }
+  .Results .bug-card .bug-image {
+    width: 100%;
   }
 }

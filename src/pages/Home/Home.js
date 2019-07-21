@@ -91,7 +91,7 @@ class Home extends React.Component {
 
     gameWin(){
       this.setState({
-        gameResults: 'You Win!',
+        gameResults: 'Great job!',
         gameDone: true
       })
     }

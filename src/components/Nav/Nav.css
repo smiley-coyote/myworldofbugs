@@ -1,13 +1,21 @@
-.navbar {
+/* navbar */
 
+.navbar {
   min-height: 70px;
   width: 100%;
-
   color: black;
-  font-size: calc(10px + (24 - 10) * (100vw - 320px) / (1200 - 400));
   z-index: 99;
   white-space: nowrap;
 }
+
+/* navbar logo */
+
+.navbar .brand {
+  font-size: 1.5em;
+  margin: 5px 0px 0px 10px;
+}
+
+/* navbar links */
 
 .navbar ul {
   display: flex;
@@ -46,5 +54,9 @@
 
   .navbar li:last-child {
     width: 40%;
+  }
+
+  .navbar .brand {
+    font-size: 1.3em;
   }
 }

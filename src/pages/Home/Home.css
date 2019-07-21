@@ -1,10 +1,11 @@
-/* .gameWindow {
-  width: 75%;
- 
-  border: 1px solid black;
-  margin: 0 auto;
-} */
+/* game window area */
 
+.game-window {
+  opacity: 0;
+  animation: appear 2s .5s forwards;
+}
+
+/* bug area */
 
 .game{
   display: flex;
@@ -13,14 +14,15 @@
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.game-window {
-  opacity: 0;
-  animation: appear 2s .5s forwards;
-}
-
-
 .tips {
   z-index: -1;
+}
+
+.tips p{
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  animation: hop 1s infinite;
 }
 
 @keyframes hop {
@@ -32,22 +34,6 @@
   }
   80%{
     transform: translateY(0px) scale(1.06);
-  }
-  100%{
-    transform: scale(1)
-  }
-}
-
-.tips p{
-  position: absolute;
-  top: 0px;
-  left: 10px;
-  animation: hop 1s infinite;
-}
-
-@keyframes swell {
-  50%{
-    transform: scale(2)
   }
   100%{
     transform: scale(1)

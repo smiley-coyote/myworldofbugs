@@ -27,7 +27,7 @@ const AllBugs = [
   alt: 'butterfly',
   src: 'images/butterfly.svg',
   image: 'images/butterfly.jpg',
-  description: 'Named for its eye-shaped spots, the common buckeye is one of the most seen butterflies in the southern United States and can be found flapping about in all 67 counties of Florida during the winter months. They migrate north in the summer as far as southern Canada. They enjoy sunny and open landscapes and feed on certain types of flowers.',
+  description: 'Named for its eye-shaped spots, the common buckeye is one of the most seen butterflies in the southern United States and can be found flapping about in all 67 counties of Florida during most of the year. They migrate north in the summer as far as southern Canada. They enjoy sunny and open landscapes and feed on certain types of flowers.',
   className: '',
   caught: false,
   type: 'insect'
@@ -49,7 +49,7 @@ const AllBugs = [
   alt: 'Spiny Orb-weaver Spider',
   src: 'images/spinyorbweaver.svg',
   image: 'images/spinyorbweaver.jpg',
-  description: 'These species of spiders are easily distinguished from other species due to their red or black spikes and skull pattern bodies. The male has no spikes and is smaller than the female. During reproduction, the male spider enters the web of the female and uses a 4-tap rhythmic-pattern drumming to let the female know that a male has entered her web. The female approaches the male and straps him down to her web with silk and then proceeds to copulate. She’ll keep the male strapped down to her web in case she wants to mate again or have a late night snack.',
+  description: 'These species of spiders are easily distinguished from other species due to their red or black spikes and skull pattern bodies. The male has no spikes and is smaller than the female. During reproduction, the male spider enters the web of the female and uses a 4-tap rhythmic-pattern drumming to let the female know that a male has entered her web. The female approaches the male and straps him down to her web with silk and then proceeds to copulate. She’ll keep the male strapped down to her web in case she wants to mate again later or have a late night snack.',
   className: '',
   caught: false,
   type: 'insect'
@@ -60,7 +60,7 @@ const AllBugs = [
   alt: 'Green Sweat Bee',
   src: 'images/greenbee.svg',
   image: 'images/greenbee.jpg',
-  description: 'Florida is home to more than 60 species of bees. The metallic green sweat bees stand out the most with their beautiful shiny green bodies. They are attracted to human sweat, and will lap it up, hence the name “sweat bee”. It’s thought that they use the sweat as a salty, protein-rich resource to give to their young. Unlike the honeybee, sweat bees are solitary nesters and nest in the ground. These bees are just as valuable to our environment as pollinator as honeybees.',
+  description: 'Florida is home to more than 60 species of bees. The metallic green sweat bees stand out the most with their beautiful shiny green bodies. They are attracted to human sweat, and will lap it up, hence the name “sweat bee”. It’s thought that they use the sweat as a salty, protein-rich resource to give to their young. Unlike the honeybee, sweat bees are solitary nesters and nest in the ground. As pollinators, these bees are just as valuable to our environment as honeybees.',
   className: '',
   caught: false,
   type: 'insect'
