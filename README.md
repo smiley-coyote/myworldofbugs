@@ -1,6 +1,6 @@
 # My World of Bugs
 
-Welcome to My World of Bugs - A game about catching bugs and learning.
+Welcome to My World of Bugs - a game about catching bugs and learning.
 
 How To Play:
 
