@@ -1,82 +1,46 @@
 .bug1 {
-  animation: moveAround 15s linear infinite;
+  animation: moveAround1 15s linear infinite;
   top: 50%;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .bug2 {
   animation: moveAround2 10s linear infinite;
   top: 49%;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .bug3 {
   animation: moveAround3 12s linear infinite;
   top: 48%;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .bug4 {
   animation: moveAround4 8s linear infinite;
   top: 47%;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .bug5 {
   animation: moveAround5 14.5s linear infinite;
   top: 46%;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .bug6 {
   animation: moveAround6 13.5s linear infinite;
   top: 45%;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .bug7 {
   animation: moveAround7 11.5s linear infinite;
   top: 44%;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .bug8 {
   animation: moveAround8 8.5s linear infinite;
   top: 43%;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .bug9 {
   animation: moveAround8 10.5s linear infinite;
   top: 42%;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 #powerup {
@@ -84,7 +48,7 @@
   height: auto;
 }
 
-@keyframes moveAround {
+@keyframes moveAround1 {
   0% { 	transform: rotate(0deg) scaleX(-1) translate(120px, 100px); }
   50% {  transform: rotate(180deg) scaleX(-1) translate(120px, 100px); }
   75% {transform: rotate(180deg) scaleX(-1) translate(120px, -100px);}
