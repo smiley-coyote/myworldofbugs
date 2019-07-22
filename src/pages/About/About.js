@@ -46,7 +46,7 @@ const About = props => (
           <a href='images/lubbergrasshopper.jpg' target="_blank"><img src='images/lubbergrasshopper.jpg' alt="lubber grasshopper" /></a>
           <a href='images/dragonfly.jpg' target="_blank"><img src='images/dragonfly.jpg' alt="dragonfly" /></a>
         </div>
-        <p>To learn more about this project, check its blog post <a href="https://smiley-coyote.github.io/myblog/" target="_blank" rel="noopener noreferrer">here</a>.</p>
+        <p>To learn more about this project, check its blog post <a href="https://smiley-coyote.github.io/myblog/myworldofbugs" target="_blank" rel="noopener noreferrer">here</a>.</p>
       </div>
     </div>
   </div>
