@@ -14,7 +14,7 @@ class Stats extends Component {
     return (
       <div className="Stats">
       <div className='stamina'>
-      <h3>Stamina left:</h3>
+      <h3>Stamina</h3>
       <p>{this.props.stamina}</p>
       </div>
       <div className='catch-next'>
@@ -24,7 +24,7 @@ class Stats extends Component {
       </div>
       </div>
       <div className="currentBugs">
-      <h3>Bugs Caught:</h3>
+      <h3>Bugs Caught</h3>
       <p className='jar'>
         {this.props.bugsList}
       </p>

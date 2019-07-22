@@ -1,3 +1,5 @@
+/* about window */
+
 .about-window {
   height: auto;
   background-color: white;
@@ -5,15 +7,25 @@
   box-shadow: 5px 10px #888888;
 }
 
-.about-window .about-contents h2 {
-  text-align: center;
-}
+/* contents */
+
 
 .about-contents {
   margin: 0 auto;
   width: 100%;
   padding: 20px 100px;
 }
+
+.about-contents h2 {
+  text-align: center;
+}
+
+.about-contents p {
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+/* about window all images */
 
 .about-window-images {
   display: flex;
@@ -22,10 +34,7 @@
   flex-wrap: wrap;
 }
 
-.svg-images img {
-  width: 60px;
-  height: auto;
-}
+/* jpg images */
 
 .jpg-images img {
   width: 230px;
@@ -34,14 +43,18 @@
   padding: 10px;
 }
 
-.about-window .about-contents p {
-  margin-top: 20px;
-  margin-bottom: 25px;
+/* svg images */
+
+.svg-images img {
+  width: 60px;
+  height: auto;
 }
 
 .svg-images img{
   animation: bounce 1s infinite;
 }
+
+/* svg images bouncing effect */
 
 .svg-images img:nth-child(1){
   animation: bounce 1s .1s infinite;

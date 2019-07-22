@@ -1,11 +1,29 @@
-.cloud {
+/* Start page */
+
+.Start h3{
+  font-size: 2em;
+  opacity: 0;
+  animation: appear 2s 1s forwards;
+}
+
+@keyframes appear2 {
+  0%{
+    transform: scale(1.1);
+  }
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.Start .cloud {
   position: absolute;
   z-index: -1;
   width: 200px;
   height: auto;
 }
 
-.spider {
+.Start .spider {
   position: relative;
   width: 100px;
   height: auto;
@@ -14,31 +32,24 @@
   transform: rotate(25deg) translateX(-20px)
 }
 
-.dropdown {
-  transform: translateY(-100px);
-  animation: dropdown 5s .5s forwards;
-}
-
-@keyframes dropdown {
-  100%{
-    transform: translateY(0px);
-  }
-}
-
 @keyframes swing{
-50%{
-  transform: rotate(-25deg) translateX(20px)
-}
-
-  100%{
-    transform: rotate(25deg) translateX(-20px)
+  50%{
+    transform: rotate(-25deg) translateX(20px)
   }
-}
+  
+    100%{
+      transform: rotate(25deg) translateX(-20px)
+    }
+  }
+
+/* Start window */
 
 .start-window {
   margin: 100px auto;
   text-align: center;
 }
+
+/* Start body */
 
 .start-body {
   margin: 0 auto;
@@ -53,11 +64,7 @@
   overflow: hidden;
 }
 
-
-
-
-
-.Start .start-body a {
+.start-body a {
   display: block;
   font-size: 30px;
   text-decoration: none;
@@ -67,25 +74,44 @@
   margin: 0 auto;
 }
 
-.Start .start-body a:hover {
+.start-body a:hover {
   color: gold;
 }
 
-.Start .start-body .start-body-about p{
+.start-body .dropdown {
+  transform: translateY(-100px);
+  animation: dropdown 5s .5s forwards;
+}
+
+
+@keyframes dropdown {
+  100%{
+    transform: translateY(0px);
+  }
+}
+
+.start-body .start-body-about p{
   font-size: 18px;
 }
 
-.Start .start-body .howtoplay {
+/* instructions/how to play */
+
+.start-body .howtoplay {
   font-size: 30px;
   padding: 5px;
 }
 
-.Start .start-body .howtoplay:hover {
+.start-body .howtoplay:hover {
   color: gold;
   cursor: pointer;
 }
 
-.Start .start-body .start-body-instructions{
+.start-body .start-body-instructions ol{
+  text-align: left;
+  line-height: 24px;
+}
+
+.start-body .start-body-instructions{
   background-color: rgba(255, 255, 255, 0.623);
   margin: 15px;
   padding: 10px;
@@ -94,33 +120,11 @@
   animation: appear 1s forwards;
 }
 
-.Start .start-body .start-body-instructions ol{
-  text-align: left;
-  line-height: 24px;
-}
-
-.Start h3{
-  font-size: 2em;
-  opacity: 0;
-  animation: appear 2s 1s forwards;
-}
-
 @keyframes appear {
   100%{
     opacity: 1;
   }
 }
-
-@keyframes appear2 {
-  0%{
-    transform: scale(1.1);
-  }
-  100%{
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
 
 .cloud1 {
   animation: move1 39s infinite linear;
@@ -203,8 +207,16 @@
   }
 }
 
-@media (max-width: 420px) {
-  .start-body {
-    width: 100%;
+@media (max-width: 500px){
+  .clouds {
+    display:none;
   }
+}
+
+@media (max-width: 420px) {
+
+  .start-body {
+    width: 90%;
+  }
+
 }
