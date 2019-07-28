@@ -59,7 +59,8 @@
 
 .svg-images img {
   width: 7%;
-  height: cover;
+  height: 7%;
+  object-fit: cover;
   -webkit-animation: bounce 1s infinite;
           animation: bounce 1s infinite;
 }
@@ -146,6 +147,7 @@
 
     .svg-images img {
       width: 9%;
+      height: 9%;
     }
 
 }
